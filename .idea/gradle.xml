@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/api-engine" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/orm" />
+            <option value="$PROJECT_DIR$/teach-core" />
           </set>
         </option>
         <option name="myModules">
@@ -20,6 +21,7 @@
             <option value="$PROJECT_DIR$/api-engine" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/orm" />
+            <option value="$PROJECT_DIR$/teach-core" />
           </set>
         </option>
       </GradleProjectSettings>

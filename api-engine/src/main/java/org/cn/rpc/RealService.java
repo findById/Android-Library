@@ -1,6 +1,7 @@
 package org.cn.rpc;
 
-import org.cn.rpc.utils.ExecutorUtil;
+import org.cn.rpc.utils.IOUtil;
+import org.cn.rpc.utils.ThreadUtil;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -70,7 +71,7 @@ public class RealService {
                 throw new IOException("" + responseCode);
             }
 
-            response.response = org.cn.rpc.utils.IOUtil.asString(connection.getInputStream(), "UTF-8");
+            response.response = IOUtil.asString(connection.getInputStream(), "UTF-8");
             response.statusCode = 200;
             response.description = "success.";
         } catch (ConnectException e) { // Connect
@@ -101,7 +102,7 @@ public class RealService {
 
     // == asynchronous start ==
     public void enqueue(ResponseListener<Response> listener) {
-        ExecutorUtil.getThreadPool().execute(new AsyncTask(listener));
+        ThreadUtil.getThreadPool().execute(new AsyncTask(listener));
     }
 
     class AsyncTask implements Runnable {

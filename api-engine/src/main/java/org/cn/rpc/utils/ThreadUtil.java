@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ExecutorUtil {
+public class ThreadUtil {
 
     private static final int CORE_POOL_SIZE = 1;
     private static int MAX_POOL_SIZE = 10;
@@ -40,7 +40,7 @@ public class ExecutorUtil {
     private static ExecutorService instance;
 
     public static ExecutorService getThreadPool() {
-        synchronized (ExecutorUtil.class) {
+        synchronized (ThreadUtil.class) {
             if (instance == null) {
                 instance = newExecutorService();
             }

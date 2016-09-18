@@ -1,1 +1,1 @@
-include ':app', ':orm', ':api-engine'
+include ':app', ':orm', ':api-engine', ':teach-core'

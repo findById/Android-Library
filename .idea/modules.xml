@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/api-engine/api-engine.iml" filepath="$PROJECT_DIR$/api-engine/api-engine.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/orm/orm.iml" filepath="$PROJECT_DIR$/orm/orm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/teach-core/teach-core.iml" filepath="$PROJECT_DIR$/teach-core/teach-core.iml" />
     </modules>
   </component>
 </project>

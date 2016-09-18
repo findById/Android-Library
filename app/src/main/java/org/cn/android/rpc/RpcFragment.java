@@ -13,6 +13,7 @@ import android.widget.Toast;
 import org.cn.android.BaseFragment;
 import org.cn.android.R;
 import org.cn.android.databinding.FragmentRpcBinding;
+import org.cn.core.utils.JSONUtil;
 import org.cn.rpc.ApiEngine;
 import org.cn.rpc.Response;
 import org.cn.rpc.ResponseListener;
@@ -59,25 +60,21 @@ public class RpcFragment extends BaseFragment {
 
         switch (method) {
             case "POST": {
-                ApiEngine.post(url, body, new ResponseListener<Response>() {
-                    @Override
-                    public void onResponse(Response response) {
-                        Log.d("RF", response.toString());
-                        mBinding.setResult(response.toString());
-                    }
-                });
+                ApiEngine.post(url, body, listener);
                 break;
             }
             default:
-                ApiEngine.get(url, new ResponseListener<Response>() {
-                    @Override
-                    public void onResponse(Response response) {
-                        Log.d("RF", response.toString());
-                        mBinding.setResult(response.toString());
-                    }
-                });
+                ApiEngine.get(url, listener);
                 break;
         }
     }
+
+    ResponseListener listener = new ResponseListener<Response>() {
+        @Override
+        public void onResponse(Response response) {
+            Log.d("RF", response.toString());
+            mBinding.setResult(JSONUtil.format(response.toString()));
+        }
+    };
 
 }
